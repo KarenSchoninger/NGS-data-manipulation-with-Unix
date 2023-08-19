@@ -1,6 +1,43 @@
+#Create a directory to perform the exercise and unzip initial file:
+$ mkdir PAC1
+$ cp /media/desktop/testdata_1.tar.gz
+$ tar xvf testdata_1.tar.gz 
+
+#Quickly browse the file:
+$ more testdata_inter.fastq 
+$ head testdata_inter.fastq
+$ tail testdata_inter.fastq
+$ cat testdata_inter.fastq
+$ less testdata_inter.fastq
+
+# What is the head of the third read? Is it paired-end (pe, forward)?
+$ head -9 testdata_inter.fastq | tail -1
+@DHKW5DQ1:324:C2G0EACXX:4:2312:6753:85158 1:N:0:TGAACTGG
+
+# What is the head of the antepenultimate read?
+$ tail -12 testdata_inter.fastq | head -1
+
+# How many lines does the file contain?
+$ wc -l testdata_inter.fastq
+$ cat testdata_inter.fastq | wc -l
+
+# How many reads does the file contain?
+$ grep "^@DHKW5DQ1" testdata_inter.fastq | wc -l    #"@DHKW5DQ1" appears only once in each read.
+$ grep -c "^@DHKW5DQ1" testdata_inter.fastq
+
+# How many paired-end (pe) and mate-pair (mp) type reads does the file contain?
+$ grep -c "1:" testdata_inter.fastq
+$ grep "2:" testdata_inter.fastq | wc -l
+
+# Extract the pe/mp reads contained in the data file and write them separately to the testdata_1.fastq and testdata_2.fastq files
+
+
+
+
+
 #Start MySQL in Ubuntu console:
 
-karen@ubuntum0151:~$ mysql -u root -p
+~$ mysql -u root -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 12
@@ -13,6 +50,7 @@ affiliates. Other names may be trademarks of their respective
 owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
 
 
 
