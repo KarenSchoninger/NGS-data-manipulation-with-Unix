@@ -30,6 +30,20 @@ $ grep -c "1:" testdata_inter.fastq
 $ grep "2:" testdata_inter.fastq | wc -l
 
 # Extraction of the pe/mp reads contained in the data file and write them separately to the testdata_1.fastq and testdata_2.fastq files:
+$ cat testdata_inter.fastq | grep '1:' -A 3 | grep -v '^--$>testdata_1.fastq     #flag -A; remove "--".
+$ cat testdata_inter.fastq | grep '2:' -A 3 | grep -v '^--$>testdata_2.fastq
+
+# Number of reads containing TGCACTAC in testdata_1.fastq:
+$ grep -c "TGCACTAC" testdata_1.fastq
+$ grep "TGCACTAC" testdada_1.fastq| wc -l
+
+# Number of reads beginning with the sequence TGCACTAC in testdata_1.fastq:
+$ grep -c "^TGCACTAC" testdata_1.fastq
+$ grep "^TGCACTAC" testdata_1.fastq| wc -l
+
+# Replacement of the part of the header that identifies the read with pe and the different descriptive fields by the value of "/1" (Illumina format) and pass the result in testdata_1_new header.fastq
+$ head -40 testdata_1.fastq | gawk '{gsub(" 1:.*","   EJERCICIO 10!!
+
 
 
 
