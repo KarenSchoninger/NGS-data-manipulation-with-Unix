@@ -53,7 +53,7 @@ The basic commands to interrogate data sets in this context are the following:
 | process >> file     | Redirection of output without overwriting     | 
 | process 2> file     | Error channel redirection     |
 | process < file     | Input redirection     |
-| process | process     | Communication of two processes     | 
+| process|process     | Communication of two processes     | 
 
 
  
