@@ -42,7 +42,11 @@ $ grep -c "^TGCACTAC" testdata_1.fastq
 $ grep "^TGCACTAC" testdata_1.fastq| wc -l
 
 # Replacement of the part of the header that identifies the read with pe and the different descriptive fields by the value of "/1" (Illumina format) and pass the result in testdata_1_new header.fastq
-$ head -40 testdata_1.fastq | gawk '{gsub(" 1:.*","   EJERCICIO 10!!
+$ head -40 testdata_1.fastq | gawk '{gsub(" 1:.*","\/");print}'
+$ gawk'{gsub(" 1:.*","\/1");print}'testdata_1.fastq>testdata_1_b.fastq
+
+
+
 
 
 
