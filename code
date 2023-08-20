@@ -1,5 +1,5 @@
 #Create a directory to perform the exercise and unzip initial file:
-$ mkdir PAC1
+$ mkdir DATA_A
 $ cp /media/desktop/testdata_1.tar.gz
 $ tar xvf testdata_1.tar.gz 
 
@@ -10,46 +10,31 @@ $ tail testdata_inter.fastq
 $ cat testdata_inter.fastq
 $ less testdata_inter.fastq
 
-# What is the head of the third read? Is it paired-end (pe, forward)?
+# Show the head of the third read:
 $ head -9 testdata_inter.fastq | tail -1
 @DHKW5DQ1:324:C2G0EACXX:4:2312:6753:85158 1:N:0:TGAACTGG
 
-# What is the head of the antepenultimate read?
+# Show the head of the antepenultimate read:
 $ tail -12 testdata_inter.fastq | head -1
 
-# How many lines does the file contain?
+# Number of file lines:
 $ wc -l testdata_inter.fastq
 $ cat testdata_inter.fastq | wc -l
 
-# How many reads does the file contain?
+# Number of file reads:
 $ grep "^@DHKW5DQ1" testdata_inter.fastq | wc -l    #"@DHKW5DQ1" appears only once in each read.
 $ grep -c "^@DHKW5DQ1" testdata_inter.fastq
 
-# How many paired-end (pe) and mate-pair (mp) type reads does the file contain?
+# Number of paired-end (pe) and mate-pair (mp) reads:
 $ grep -c "1:" testdata_inter.fastq
 $ grep "2:" testdata_inter.fastq | wc -l
 
-# Extract the pe/mp reads contained in the data file and write them separately to the testdata_1.fastq and testdata_2.fastq files
+# Extraction of the pe/mp reads contained in the data file and write them separately to the testdata_1.fastq and testdata_2.fastq files:
 
 
 
 
 
-#Start MySQL in Ubuntu console:
-
-~$ mysql -u root -p
-Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 12
-Server version: 8.0.26 MySQL Community Server - GPL
-
-Copyright (c) 2000, 2021, Oracle and/or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 
 
